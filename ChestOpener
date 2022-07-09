@@ -5,13 +5,13 @@
 game.StarterGui:SetCore("SendNotification", {
     Title = "Auto chest";
     Text = "Made by tonkra"; -- what the text says (ofc)
-    Duration = 60;
+    Duration = 10;
 }) 
 wait(1)
 game.StarterGui:SetCore("SendNotification", {
     Title = "Opening!";
     Text = "Reset to stop"; -- what the text says (ofc)
-    Duration = 60;
+    Duration = 10;
 })
 
 _G.HeadSize = 20
