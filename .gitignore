@@ -1,18 +1,33 @@
-# Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
+-- Build a boat
+-- Script lua 1.0
 
-# Other files and folders
-.settings/
+-- Send alert
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Auto chest";
+    Text = "Made by tonkra"; -- what the text says (ofc)
+    Duration = 60;
+}) 
+wait(1)
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Opening!";
+    Text = "Reset to stop"; -- what the text says (ofc)
+    Duration = 60;
+})
 
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
+_G.HeadSize = 20
+_G.Disabled = true
 
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+-- Input free block
+
+_G.RUN = true
+spawn(function()
+coroutine.wrap(function()
+while _G.RUN do wait()
+coroutine.wrap(function()
+while _G.RUN do wait()
+workspace.ItemBoughtFromShop:InvokeServer("Winter Chest",math.floor(game:GetService("Players").LocalPlayer.Data.Gold.Value / 100))
+end
+end)()
+end
+end)()
+end)
